@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking Progress</title>
+    <link rel="stylesheet" href="tracking.css">
+
+    <!-- UniIcon CDN Link -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    
+    <div class="main">
+    <div class="container">
+        <h1>Order Tracking System</h1>
+        <label for="orderNumber"><strong>Enter Order Number</strong>:</label>
+        <input type="text" id="orderNumber" placeholder="Order Number">
+        <button id="trackButton">Track Order</button>
+        <div id="orderStatus"></div>
+    </div>
+    <div id="wrap">
+
+        <div class="head">
+            <div class="head_1">Order <span>Tracking</span></div>
+            <div class="head_2">Follow your order status in real-time</div>
+        </div>
+        <ul>
+            <li>
+                <i class="icon uil uil-capture"></i>
+                <div class="progress one">
+                    
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Add To Cart</p>
+            </li>
+            <li>
+                <i class="icon uil uil-clipboard-notes"></i>
+                <div class="progress two">
+                    
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Fill Details</p>
+            </li>
+            <li>
+                <i class="icon uil uil-credit-card"></i>
+                <div class="progress three">
+                    
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Make Payment</p>
+            </li>
+            <li>
+                <i class="icon uil uil-exchange"></i>
+                <div class="progress four">
+                   
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order in Progress</p>
+            </li>
+            <li>
+                <i class="icon uil uil-map-marker"></i>
+                <div class="progress five">
+                    <i class="uil uil-check"></i>
+                </div>
+                <p class="text">Order Arrived</p>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <script src="tracking.js"></script>
+</body>
+</html>

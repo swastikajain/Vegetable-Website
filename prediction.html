@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+   
+    <link rel="stylesheet" href="../public/css/prediction.css" />
+   <script>
+    function openGoogleMaps() {
+  var selectElement = document.getElementById("place-select");
+  var selectedPlace = selectElement.value;
+
+  // Replace spaces with plus signs for the URL
+  var formattedPlace = selectedPlace.replace(/ /g, "+");
+
+  // Create the Google Maps URL with the specified place
+  var mapsUrl = "https://www.google.com/maps?q=" + formattedPlace;
+
+  // Open the URL in a new tab or window
+  window.open(mapsUrl);
+}
+
+   </script>
+  </head>
+  <body style =background-image:url('../public/images/pre.png') alt="My Image">
+   
+    <div class="container">
+      <form id="form" action="/">
+        <h1>PREDICTION</h1>
+        <div class="input-control">
+          <p><strong> Price:</strong> Rs. 50/kg</p>
+    <p><strong> prediction Price:</strong> Rs. 40/kg</p>
+    <label>Select Your City:</label>
+    <select name="City" id="place-select">
+      <option value="Delhi">Delhi</option>
+      <option value="Dehradun">Dehradun</option>
+      <option value="Bareilly">Bareilly</option>
+    </select>
+    <button class="open-maps-btn" onclick="openGoogleMaps()">Open on Google Maps</button>
+        </div>
+       
+        <button type="submit"> <a type="button"  href="./index.html" id="col" >home</a></button>
+      </form>
+    
+   
+  
+  </body>
+</html>

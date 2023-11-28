@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamlined Model Predictions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #predictions {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Streamlined Model Predictions</h1>
+    </header>
+    <div class="container">
+        <form id="prediction-form">
+            <!-- Add input fields here as needed -->
+            <button type="submit">Predict</button>
+        </form>
+        <div id="predictions"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+         $('#prediction-form').submit(function (e) {
+            e.preventDefault();
+
+            // Collect input data as needed
+            const inputData = {
+                // ... Input data ...
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/predict',
+                contentType: 'application/json',
+                data: JSON.stringify(inputData),
+                success: function (data) {
+                    const predictionsDiv = $('#predictions');
+                    predictionsDiv.empty();
+
+                    // Display predictions
+                    $.each(data, function (model, prediction) {
+                        predictionsDiv.append(`<p>${model}: ${prediction}</p>`);
+                    });
+                },
+                error: function (error) {
+                    console.error('Prediction error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" type="text/css" href="../public/css/cart.css" />
+
+    <script
+      src="https://kit.fontawesome.com/9088cc6401.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <link
+    rel="shortcut icon"
+    type="image/jpg/png"
+    href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"
+  />
+  <body>
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <div class="cart-header">
+        <button id="cart-button" onclick="clearCart()">Clear Cart</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-total" id="cartTotal">Total: Rs0</div>
+      <div class="cart-empty" id="cartEmpty">Your cart is empty.</div> 
+      <!--  Displaying the product details on the cart.html page -->
+
+      <a href="Details For Checkout HTML.html?cartTotal=<cart_total_amount>" id="checkoutLink">Proceed to Checkout</a>
+
+    </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        updateCartUI();
+
+        // Listen for the cartUpdated event from the source page
+        window.addEventListener('cartUpdated', () => {
+          updateCartUI();
+        });
+          // const checkoutLink = document.getElementById('checkoutLink'); {% endcomment %}
+          const cartTotalElement = document.getElementById('cartTotal');
+          const cartTotal = parseFloat(cartTotalElement.textContent.replace('Total: Rs', ''));
+          const cart_total_amount=cartTotalElement;
+
+  // Update the href attribute of the Proceed to Checkout link with the cart total amount
+  if (checkoutLink) {
+     checkoutLink.href = `Details For Checkout HTML.html?totalAmount=${cartTotal}`;
+  }
+});
+    
+
+      function clearCart() {
+          localStorage.removeItem('cartItems');
+          updateCartUI();
+      }
+
+
+function updateCartUI() {
+  const cartItemsElement = document.getElementById("cartItems");
+  const cartTotalElement = document.getElementById("cartTotal");
+  const cartEmptyElement = document.getElementById("cartEmpty");
+
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartItemsElement.innerHTML = "";
+  let cartTotal = 0;
+
+  cartItems.forEach((item) => {
+    const cartItemDiv = document.createElement("div");
+    cartItemDiv.className = "cart-item";
+    cartItemDiv.innerHTML = `
+      <img src="${item.image}" alt="Product Image">
+      <span>${item.name}</span>
+      <span>Rs ${item.price}</span>
+      <div class="quantity">
+        <button class="decrease-btn" onclick="updateCartItemQuantity('${item.name}', ${item.price}, -1)">-</button>
+        <span>${item.quantity}</span>
+        <button class="increase-btn" onclick="updateCartItemQuantity('${item.name}', ${item.price}, 1)">+</button>
+      </div>
+    `;
+    cartItemsElement.appendChild(cartItemDiv);
+    cartTotal += item.price * item.quantity;
+
+    window.localStorage.setItem("cart1",cartTotal.toString());
+  });
+
+  cartTotalElement.textContent = `Total: Rs ${cartTotal}`;
+  cartEmptyElement.style.display = cartItems.length === 0 ? "block" : "none";
+}
+
+
+    function updateCartItemQuantity(productName, price, quantityChange) {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const cartItem = cartItems.find(item => item.name === productName);
+
+  if (cartItem) {
+    cartItem.quantity += quantityChange;
+
+    if (cartItem.quantity <= 0) {
+      const itemIndex = cartItems.indexOf(cartItem);
+      cartItems.splice(itemIndex, 1);
+    }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    window.dispatchEvent(new Event("cartUpdated"));
+
+  }
+}
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" data-theme>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online vegetable Website</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="./chatbot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+  />
+  <script src="./chatbot.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../public/images/logo.png" />
+      </div>
+
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Products">Products</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Blog">Blog</a></li>
+        <li><a href="./tracking.html">Track order</a></li>
+      </ul>
+       <form action="" class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" placeholder="Search" name="search" size = "40px" required>
+        <input type="submit" class="search-btn" value="Search">
+    </form>
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label for="checkbox" class="checkbox-label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <span class="ball"></span>
+    </label>
+      <div class="search">
+        
+        <ul>
+       <li> <i class="fa-solid fa-magnifying-glass"></i></li>
+       <li> <a class="fa-solid fa-cart-shopping" href="cart.html"></a></li>
+      
+       <li> <a href="signup.html" class="products_btn">SignUp / Login</a></li>
+      </ul>
+      </div>
+    </nav>
+    
+    
+
+    <section id="Home">
+      <div class="home_left">
+        <h1>The Fresh and<br />Organic<span>Vegetables and Fruits</span></h1>
+        <p>
+          Fresh and organic vegetables and fruits are the epitome of nourishment and vitality.</p>
+        </p>
+        <a href="home.html" class="home_btn">Learn More</a>
+      </div>
+
+      <div class="home_right anim">
+        <img src="../public/images/home_image.png" />
+      </div>
+    </section>
+
+    <!------------------About---------------->
+
+
+    <!------------------Products-------------->
+<div class="products" id="Products">
+      <h1>Latest Products</h1>
+
+      <div class="products_main">
+        <p>
+        List of products is given:
+        </p>
+
+        <div class="products_box">
+          <div class="products_card">
+            <div class="products_img">
+              <img src="../public/images/produ_1.png" />
+            </div>
+            <div class="products_tag">
+              <h2>Products</h2>
+              <p>Price:Rs40/kg</p>
+              <a href="./in.html" class="products_btn">Learn More</a>
+            </div>
+            <div class="cart">
+              <!-- Add the image URL to the addToCart function -->
+            <a href="cart.html" class="cart-btn" onclick="addToCart('Apple', 40, '../public/images/produ_1.png')">
+               <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            </div>
+          </div>
+
+          <div class="products_card">
+            <div class="products_img">
+              <img src="../public/images/produ_2.png" />
+            </div>
+            <div class="products_tag">
+              <h2>Products</h2>
+              <p>Price:Rs50/kg</p>
+              <a href="in.html" class="products_btn" >Learn More</a>
+            </div>
+            <div class="cart">
+             <a href="cart.html" class="cart-btn" onclick="addToCart('PineApple', 100,'../public/images/produ_2.png')">
+                 <i class="fa-solid fa-cart-shopping"></i>
+             </a>
+
+              
+            </div>
+          </div>
+
+          <div class="products_card">
+            <div class="products_img">
+              <img src="../public/images/produ_3.png" />
+            </div>
+            <div class="products_tag">
+              <h2>Products</h2>
+              <p>Price:Rs.80/kg</p>
+              <a href="in.html" class="products_btn">Learn More</a>
+            </div>
+            <div class="cart">
+              <a href="cart.html" class="cart-btn" onclick="addToCart('Banana', 80,'../public/images/produ_3.png')">
+                 <i class="fa-solid fa-cart-shopping"></i>
+             </a>
+            </div>
+          </div>
+
+          <div class="products_card">
+            <div class="products_img">
+              <img src="../public/images/produ_4.png" />
+            </div>
+            <div class="products_tag">
+              <h2>Products</h2>
+              <p>Price:120/kg</p>
+              <a href="in.html" class="products_btn" >Learn More</a>
+            </div>
+            <div class="cart">
+              <a href="cart.html" class="cart-btn" onclick="addToCart('Oranges', 120,'../public/images/produ_4.png')">
+                 <i class="fa-solid fa-cart-shopping"></i>
+             </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------------Carousel------------>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px; /* Increase the max-width as needed */
+  margin: 0 auto; /* Center the slideshow horizontally */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Full-width images */
+.mySlides img {
+  width: 100%;
+  height: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+
+/* Position the "previous button" to the left */
+.prev {
+  left: 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* Center the text */
+.text {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent; /* Remove the black background */
+  color: white;
+  padding: 8px 12px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+</style>
+</head>
+<body>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="../public/images/c1.png" alt="Image 1">
+    <div class="text">Take a Look for amazing offers!!!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../public/images/c2.png" alt="Image 2">
+    <div class="text">Take a Look for amazing offers!!!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../public/images/c3.png" alt="Image 3">
+    <div class="text">Take a Look for amazing offers!!!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../public/images/c4.png" alt="Image 4">
+    <div class="text">Take a Look for amazing offers!!!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../public/images/c5.png" alt="Image 5">
+    <div class="text">Take a Look for amazing offers!!!</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); 
+}
+
+function plusSlides(n) {
+  slideIndex += n;
+  showSlides();
+}
+</script>
+
+</body>
+</html>
+
+    <!------------Banner------------>
+    
+    <div class="banner">
+      <div class="banner_one">
+        <img src="../public/images/1.png" />
+        <div class="banner_tag">
+          <h1>Save UP to 50%</h1>
+          <a href="Fruits Category Page HTML.html" class="banner_btn">Shop Now</a>
+        </div>
+      </div>
+
+      <div class="banner_two">
+        <img src="../public/images/2.png" />
+        <div class="banner_tag">
+          <h1>Free Shipping</h1>
+          <p>ON ORDER UP TO $100</p>
+          <a href="Fruits Category Page HTML.html" class="banner_btn">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="services" id="Services">
+      <div class="services_box">
+        <div class="services_card">
+          <a href="free_delivery.html" class="fa-solid fa-cart-shopping" target="free_delivery.html"></a>
+          <div class="services_tag">
+            <h2>Free Fast Delivery</h2>
+            <p>Get instant products for free.</p>
+          </div>
+        </div>
+
+        <div class="services_card">
+          <a href="quality.html" class="fa-regular fa-face-grin" target="quality.html"></a>
+          <div class="services_tag">
+            <h2>For Quality Products</h2>
+            <p>Get best quality products.</p>
+          </div>
+        </div>
+
+        <div class="services_card">
+          <a href="special_offer.html" class="fa-solid fa-tags" target="special_offer.html"></a>
+          <div class="services_tag">
+            <h2>Special Offer</h2>
+            <p>Get special offer on occassions.</p>
+          </div>
+        </div>
+
+        <div class="services_card">
+          <a href="all_time.html" class="fa-solid fa-headset" target="all_time.html"></a>
+          <div class="services_tag">
+            <h2>24 x 7 Support</h2>
+            <p>All time availability</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="blog" id="Blog">
+      <h1>Our Blog</h1>
+
+      <div class="blog_box">
+        <div class="blog_card">
+          <div class="blog_img">
+            <img src="../public/images/blog_1.png" />
+          </div>
+          <div class="blog_tag">
+            <p class="date">
+              <i class="fa-solid fa-calendar-days"></i>2022.05.23
+            </p>
+
+            <p>
+              <p><b>HAPPY CUSTOMERS</b></p>
+              <p>
+              I hope this message finds you all in great spirits. I am writing to express my heartfelt appreciation for the outstanding shopping experience I recently had on your platform. <br />
+            </p>
+            </p>
+            <p class="like"><i class="fa-solid fa-heart"></i></p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="blog_card_2">
+          <div class="blog_tag">
+            <p class="date">
+              <i class="fa-solid fa-calendar-days"></i>2022.07.15
+            </p>
+            <h1>Feedback Rating</h1>
+
+            <p>
+              Thank you for shopping with us.
+              Please provide feedback on the overall bigbasket experience related to this delivery.
+              Your rating will help us serve you better.
+              
+              <br /><br />
+
+            <!-- feedback form -->
+
+            </p>
+            <a href="feedback.html">Click to submit your feedback</a>
+            <p class="like"><i class="fa-solid fa-heart"></i></p>
+          </div>
+          <div class="blog_img">
+            <img src="../public/images/blog_2.png" />
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="blog_card">
+          <div class="blog_img">
+            <img src="../public/images/blog_3.png" />
+          </div>
+          <div class="blog_tag">
+            <p class="date">
+              <i class="fa-solid fa-calendar-days"></i>2022.09.16
+            </p>
+
+            <p>
+              <p><b>HAPPY CUSTOMERS</b></p>
+              <p>
+              As a satisfied customer, I wanted to take a moment to acknowledge the hard work and dedication of the entire Big Basket team. It is evident that you prioritize customer satisfaction and continuously strive to exceed expectations.
+            </p>
+                </p>
+            <p class="like"><i class="fa-solid fa-heart"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about" id="About">
+      <div class="about_image">
+        <img src="../public/images/about.png" />
+      </div>
+      <div class="about_tag">
+        <h1>About Us</h1>
+      <p>
+        Welcome to Fresh Harvests, your one-stop destination for the freshest and highest-quality vegetables and fruits. Our website is dedicated to providing you with a delightful online shopping experience, bringing the bounties of nature directly to your doorstep.
+      </p>
+    
+        <a href="./about.html" class="about_btn">Learn More</a>
+      </div>
+    </div>
+
+    <!-------------Footer-------------->
+
+    <footer>
+      <div class="footer_main">
+        <div class="footer_tag">
+          <h1>Help</h1>
+          
+          <a href="./terms.html">Terms & Conditons</a><br/>
+          <a href="./faqs.html">FAQs</a><br/>
+          <a href="./return.html">Return Policy</a><br/>
+          <a href="./privacy.html">Privacy Policy</a><br/>
+          <a href="./delivery.html">Delivery Information</a>
+        </div>
+
+        <div class="footer_tag">
+          <h1>Contact</h1>
+          <p id="location"><i class="fa-solid fa-location-dot"></i>Dehradun,Uttarakhand</p>
+          <p><i class="fa-solid fa-phone"></i>+91 6397750579</p>
+          <p><i class="fa-solid fa-phone"></i>+94 25 787 9999</p>
+          <p><i class="fa-solid fa-envelope"></i><a href="mailto:sigma123@gmail.com">sigma123@gmail.com</a></p>
+        </div>
+
+        <div class="footer_tag">
+          <h1>Follow Us</h1>
+          <p><i class="fa-brands fa-facebook-f"></i>Facebook</p>
+          <p><i class="fa-brands fa-twitter"></i>Twitter</p>
+          <p><i class="fa-brands fa-instagram"></i>Instagram</p>
+          <p><i class="fa-brands fa-linkedin-in"></i>Linkedin</p>
+          <p><i class="fa-brands fa-google"></i>Google</p>
+        </div>
+
+        <div class="footer_tag">
+          <h1>Online Payments</h1>
+          <img src="../public/images/card1.png" />
+          <img src="../public/images/card2.png" />
+          <img src="../public/images/card3.png" />
+          <img src="../public/images/card4.png" />
+        </div>
+      </div>
+      <div class="footer_copyright">
+        <p>Copyright &copy; 2023 Sigma. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- <div>
+      <a href="#" class="top">Back to top</a>
+      </div> -->
+      <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="chatbot">
+        <header>
+          <h2>Chatbot</h2>
+          <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+          <li class="chat incoming">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <p>Hi there 👋<br />How can I help you today?</p>
+          </li>
+        </ul>
+        <div class="chat-input">
+          <textarea
+            placeholder="Enter a message..."
+            spellcheck="false"
+            required
+          ></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+      </div>
+      <script>
+  
+ function addToCart(productName, price, imageUrl) {
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  const existingItem = cartItems.find(item => item.name === productName);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cartItems.push({ name: productName, price: price, image: imageUrl, quantity: 1 });
+  }
+
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  window.dispatchEvent(new Event("cartUpdated"));
+}
+
+
+</script>
+<script src="./index.js"></script>
+  </body>
+</html>

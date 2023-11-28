@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+  <title>Fruits and Vegetables</title>
+
+  <script
+    src="https://kit.fontawesome.com/5471644867.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="../public/css/Fruits Category Page CSS.css"
+  />
+
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"
+  />
+
+  <body>
+    <section id="popular-product">
+      <div class="product-heading">
+        <h2 class="fruits-heading">Fruits and Vegetables</h2>
+      </div>
+      <!--box-container------>
+      <div class="product-container">
+        <!--box---------->
+        <div class="product-box">
+          <img alt="apple" src="https://i.imgur.com/vUJ2JKU.png" />
+          <strong>Apple</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 100</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Apple', 100,'https://i.imgur.com/vUJ2JKU.png')"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+        <!--box---------->
+        <div class="product-box">
+          <img alt="chili" src="https://i.imgur.com/rFhSMZN.png" />
+          <strong>Chili</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 80</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Chilli', 80,'https://i.imgur.com/rFhSMZN.png')"
+          >
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+        <!--box---------->
+        <div class="product-box">
+          <img alt="apple" src="https://i.imgur.com/sGLggWL.jpg" />
+          <strong>Onion</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 50</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Onion', 50,'https://i.imgur.com/sGLggWL.jpg')"
+          >
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+        <!--box---------->
+        <div class="product-box">
+          <img alt="apple" src="https://i.imgur.com/WFjH6ui.png" />
+          <strong>Potato</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 60</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Potato', 60,'https://i.imgur.com/WFjH6ui.png')"
+          >
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+        <!--box---------->
+        <div class="product-box">
+          <img alt="oranges" src="https://i.imgur.com/5nFAIJ8.jpg" />
+          <strong>Oranges</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 80</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Oranges', 80,'https://i.imgur.com/5nFAIJ8.jpg')"
+          >
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+        <!--box---------->
+        <div class="product-box">
+          <img alt="apple" src="https://i.imgur.com/8l5hDhS.png" />
+          <strong>Tomato</strong>
+          <span class="quantity">1 KG</span>
+          <span class="price">Rs. 80</span>
+
+          <a
+            href="cart.html"
+            class="cart-btn"
+            style="text-decoration: none"
+            onclick="addToCart('Tomato', 80,'https://i.imgur.com/8l5hDhS.png')"
+          >
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </a>
+
+          <a class="like-btn" style="text-decoration: none">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // JavaScript code for shopping functionality
+      function addToCart(productName, price, imageUrl) {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        const existingItem = cartItems.find(
+          (item) => item.name === productName
+        );
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cartItems.push({
+            name: productName,
+            price: price,
+            image: imageUrl,
+            quantity: 1,
+          });
+        }
+
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        window.dispatchEvent(new Event("cartUpdated"));
+      }
+    </script>
+  </body>
+</html>

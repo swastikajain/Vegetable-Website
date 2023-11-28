@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay here</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/Payment CSS.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="checkout-image">
+                <div class="info">
+                    <h2>Grocery</h2>
+                    <h4>Fruits & Vegetables</h4>
+                    <h2 class="paymentAmountPlaceholder">Pay Rs 0</h2>
+                    
+                    <img class="product-img" src="../public/images/unsplash.jpg" height="300px" alt="Product-Image" />
+                </div>
+                <div class="footer">
+                    <p>
+                        <span>Powered by <b>Razorpay</b></span>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-warning-ui-dreamstale-lineal-dreamstale.png" alt="Warning-icon" height="15px" width="15px" />
+                    </p>
+                    <select>
+                        <option selected>English</option>
+                        <option>Hindi</option>
+                        <option>Bengali</option>
+                    </select>
+                </div>
+            </div>
+            <div class="checkout-text">
+    
+                <div class="back-to-home">
+                    <a href="index.html">Back to Home</a>
+                    <img src="https://img.icons8.com/sf-regular/48/aaaaaa/forward.png" alt="Arrow" height="15px" width="15px" />
+                    <a href="">Payment</a>
+                </div>
+
+                <div class="pay-button">
+                    <button>
+                        <img src="../public/images/google-pay.png" alt="google-pay" height="40px" width="40px" />
+                        
+                    </button>
+                </div>
+
+                <div class="or-line">
+                    <p>Or pay with card</p>
+                </div>
+    
+                <div class="card-details">
+                    <label>Card details</label>
+                    <div class="card-number">
+                        <input type="number" placeholder="4242 4242 4242 4242" />
+                        <div>
+                            <img src="https://img.icons8.com/color/48/000000/visa.png" height="20px" width="20px" />
+                            <img src="https://img.icons8.com/color/48/000000/mastercard.png" height="20px" width="20px" />
+                            <img src="https://img.icons8.com/color/48/000000/amex.png" height="20px" width="20px" />
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="mm-yy">
+                            <input type="number" placeholder="MM / YY" />
+                        </div>
+                        <div class="cvc">
+                            <input type="number" placeholder="CVC" />
+                            <img src="https://img.icons8.com/ios/50/000000/card-verification-value.png" height="20px" width="20px" />
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="owner-name">
+                    <label>Owner name</label>
+                    <input type="text" placeholder="Enter name" />
+                </div>
+    
+                <div class="country-region">
+                    <label>City</label>
+                    <select>
+                        <option>Dehrdaun</option>
+                        <option>Delhi</option>
+                        <option>Mumbai</option>
+                        <option>Banglore</option>
+                        <option>Pune</option>
+                        <option>Kolkata</option>
+                    </select>
+                    <input type="number" placeholder="Zip code" />
+                </div>
+    
+                <a class="buy-button" href="./success.html" id="pay-btn-amt">Pay Rs 0</a>
+    
+            </div>
+
+           <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const paymentAmountPlaceholder =  document.getElementsByClassName('paymentAmountPlaceholder');
+        const pay_btn_amt =  document.getElementById('pay-btn-amt');
+        let total=window.localStorage.getItem("cart1");
+        console.log(total);
+        console.log(paymentAmountPlaceholder);
+        pay_btn_amt.innerHTML=`Pay Rs ${total || '0'}`;
+
+        for (var i = 0; i < paymentAmountPlaceholder.length; i++) {
+            paymentAmountPlaceholder[i].textContent = `Pay Rs ${total || '0'}`; // Change text content here
+        }
+    
+        
+    });
+
+    </script>
+       
+</body>
+</html>

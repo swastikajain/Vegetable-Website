@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Vegetable Store - Quality Products</title>
+    <style>
+      /* Add any custom CSS styling here */
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .product {
+        display: none;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        width: 250px;
+        float: left;
+      }
+      .product img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .product h3 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+      .product p {
+        color: #555;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quality Vegetables</h1>
+    <div class="product">
+      <img src="../public/images/carrot.png" alt="Product 1" />
+      <h3>Carrots</h3>
+      <p>Delicious and nutritious carrots straight from our farm.</p>
+      <p>Price: Rs.100/kg</p>
+    </div>
+    <div class="product">
+      <img src="../public/images/brocolli.png" alt="Product 2" />
+      <h3>Broccoli</h3>
+      <p>Fresh and green broccoli harvested daily.</p>
+      <p>Price: Rs.140/kg</p>
+    </div>
+    <div class="product">
+      <img src="../public/images/tomato.png" alt="Product 3" />
+      <h3>Tomatoes</h3>
+      <p>Plump and juicy tomatoes grown with care.</p>
+      <p>Price: Rs. 50/kg</p>
+    </div>
+    <!-- Add more products here -->
+    <div class="product">
+      <img src="../public/images/tomato.png" alt="Product 4" />
+      <h3>Spinach</h3>
+      <p>Fresh and nutrient-rich spinach leaves.</p>
+      <p>Price: Rs. 60/kg</p>
+    </div>
+    <div class="product">
+      <img src="../public/images/carrot.png" alt="Product 5" />
+      <h3>Potatoes</h3>
+      <p>High-quality, versatile potatoes for your kitchen.</p>
+      <p>Price: Rs. 40/kg</p>
+    </div>
+    <!-- Add more products here -->
+
+    <script>
+      // Slideshow logic
+      const products = document.querySelectorAll(".product");
+      let currentIndex = 0;
+
+      function showNextProduct() {
+        products[currentIndex].style.display = "none";
+        currentIndex = (currentIndex + 1) % products.length;
+        products[currentIndex].style.display = "block";
+      }
+
+      // Initial setup
+      products[currentIndex].style.display = "block";
+      setInterval(showNextProduct, 3000); // Change image every 3 seconds
+    </script>
+  </body>
+</html>
